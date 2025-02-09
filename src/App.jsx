@@ -96,7 +96,7 @@ import ProfessionalResetPasswordPage, {
 
 const router = createBrowserRouter([
   {
-    path: "/garage",
+    path: "/",
     element: <RootLayout />,
     // errorElement: <ErrorPage />,
     children: [
@@ -107,7 +107,7 @@ const router = createBrowserRouter([
   },
   {
     id: "authloader",
-    path: "garage/user",
+    path: "user",
     // errorElement: <ErrorPage />,
     children: [
       {
@@ -194,7 +194,7 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "garage/professional",
+    path: "professional",
     // errorElement: <ErrorPage />,
     children: [
       {
@@ -294,7 +294,7 @@ const router = createBrowserRouter([
   },
 
   {
-    path: "garage/admin",
+    path: "admin",
     // errorElement: <ErrorPage />,
     children: [
       {

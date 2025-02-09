@@ -13,7 +13,7 @@ function UserProtectedComponent({ children }) {
         !localStorage.getItem("refreshtoken")
       ) {
         setIsAuthenticated(false);
-        navigate("/garage/user/login", { replace: true });
+        navigate("/user/login", { replace: true });
         return;
       }
       try {
@@ -30,7 +30,7 @@ function UserProtectedComponent({ children }) {
         localStorage.removeItem("userid");
 
         setIsAuthenticated(false);
-        navigate("/garage/user/login", { replace: true });
+        navigate("/user/login", { replace: true });
       }
     };
 
