@@ -108,7 +108,7 @@ const Dashboard = ({
                   <>
                     <ButtonBase
                       onClick={() =>
-                        navigate("/garage/professional/dashboard/allbookings")
+                        navigate("/professional/dashboard/allbookings")
                       }
                     >
                       <Box>
@@ -140,7 +140,7 @@ const Dashboard = ({
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <Form action="/garage/professional/logout" method="post">
+                <Form action="/professional/logout" method="post">
                   <button>
                     {" "}
                     <FiLogOut /> Logout

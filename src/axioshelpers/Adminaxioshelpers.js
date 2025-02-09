@@ -26,7 +26,7 @@ adminaxiosInstance.interceptors.response.use(
         const refreshToken = localStorage.getItem("refreshtoken");
         if (!refreshToken) {
           // Redirect to login if no refresh token is available
-          return redirect("/garage/admin/login");
+          return redirect("/admin/login");
         }
 
         // Refresh the access token
@@ -58,7 +58,7 @@ adminaxiosInstance.interceptors.response.use(
         localStorage.removeItem("refreshtoken");
         localStorage.removeItem("adminid");
 
-        return redirect("/garage/admin/login");
+        return redirect("/admin/login");
       }
     }
 

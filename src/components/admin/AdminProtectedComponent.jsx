@@ -15,7 +15,7 @@ function AdminProtectedComponent({ children }) {
         !localStorage.getItem("refreshtoken")
       ) {
         setIsAuthenticated(false);
-        navigate("/garage/admin/login", { replace: true });
+        navigate("/admin/login", { replace: true });
         return;
       }
       try {
@@ -32,7 +32,7 @@ function AdminProtectedComponent({ children }) {
         localStorage.removeItem("adminid");
 
         setIsAuthenticated(false);
-        navigate("/garage/admin/login", { replace: true });
+        navigate("/admin/login", { replace: true });
       }
     };
 

@@ -47,7 +47,7 @@ function ViewBooking() {
     setLoading(true);
     const book = await BookingAcceptAction(bookingid);
     setLoading(false);
-    navigate("/garage/professional/dashboard/allbookings");
+    navigate("/professional/dashboard/allbookings");
   };
   const defaultProps = {
     center: {
@@ -203,7 +203,7 @@ function ViewBooking() {
                       color="success"
                       sx={{ px: 4 }}
                       onClick={() =>
-                        navigate("/garage/professional/dashboard/allbookings")
+                        navigate("/professional/dashboard/allbookings")
                       }
                     >
                       Go back

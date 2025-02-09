@@ -31,7 +31,7 @@ function Login() {
         transition: Bounce,
       });
 
-      setTimeout(() => navigate("/garage/professional/dashboard"), 2000); // Redirect after successful login
+      setTimeout(() => navigate("/professional/dashboard"), 2000); // Redirect after successful login
     } else if (actionData.status === 401) {
       toast.warning(actionData.message, {
         position: "top-right",
@@ -124,7 +124,7 @@ function Login() {
 
             <div className="text-center mb-4">
               <Link
-                to="/garage/professional/resetpassword"
+                to="/professional/resetpassword"
                 className="text-decoration-none"
               >
                 Forgot Password?
@@ -134,7 +134,7 @@ function Login() {
           <div className="text-center mt-4">
             <span className="me-2">Don't have an account?</span>
             <Link
-              to="/garage/professional/register"
+              to="/professional/register"
               className="text-decoration-none fw-bold"
             >
               Sign Up

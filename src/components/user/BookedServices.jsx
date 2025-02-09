@@ -39,7 +39,7 @@ function BookedServices() {
   // Handler for payment (to be implemented)
   const handlePayment = (bookingId) => {
     alert("this feature soon..");
-    console.log("Initiating payment for booking:", bookingId);
+
     // Add payment integration logic here
   };
 

@@ -10,6 +10,8 @@ import {
 } from "react-router";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 
+const URL = import.meta.env.VITE_API_URL;
+
 function Register() {
   const navigation = useNavigation();
   const navigate = useNavigate();
@@ -32,7 +34,7 @@ function Register() {
         transition: Bounce,
       });
 
-      const timer = setTimeout(() => navigate("/garage/user/login"), 3000);
+      const timer = setTimeout(() => navigate("/user/login"), 3000);
       return () => clearTimeout(timer);
     }
 
@@ -169,7 +171,7 @@ function Register() {
           </Form>
 
           <a
-            href="http://localhost:3000/api/v1/garage/user/oauth2/google/sigin"
+            href={`${URL}/user/oauth2/google/sigin`}
             className="btn  btn-outline-danger rounded-pill d-flex justify-content-center align-items-center gap-2 text-decoration-none w-100 mb-4"
             style={{
               padding: "0.75rem 1.5rem",

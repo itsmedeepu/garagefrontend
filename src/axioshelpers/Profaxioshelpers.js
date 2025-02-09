@@ -27,7 +27,7 @@ profaxiosInstance.interceptors.response.use(
         const refreshToken = localStorage.getItem("refreshtoken");
         if (!refreshToken) {
           // Redirect to login if no refresh token is available
-          return redirect("/garage/professional/login");
+          return redirect("/professional/login");
         }
 
         // Refresh the access token
@@ -59,7 +59,7 @@ profaxiosInstance.interceptors.response.use(
         localStorage.removeItem("refreshtoken");
         localStorage.removeItem("professionalid");
 
-        return redirect("/garage/professional/login");
+        return redirect("/professional/login");
       }
     }
 

@@ -13,7 +13,7 @@ function ProfessinalProtectedComponent({ children }) {
         !localStorage.getItem("refreshtoken")
       ) {
         setIsAuthenticated(false);
-        navigate("/garage/professional/login", { replace: true });
+        navigate("/professional/login", { replace: true });
         return;
       }
       try {
@@ -30,7 +30,7 @@ function ProfessinalProtectedComponent({ children }) {
         localStorage.removeItem("professinalid");
 
         setIsAuthenticated(false);
-        navigate("/garage/professional/login", { replace: true });
+        navigate("/professional/login", { replace: true });
       }
     };
 

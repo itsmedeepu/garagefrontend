@@ -31,7 +31,7 @@ function ResetPassword() {
         transition: Bounce,
       });
 
-      setTimeout(() => navigate("/garage/professional/login"), 2000); // Redirect after successful login
+      setTimeout(() => navigate("/user/login"), 2000); // Redirect after successful login
     } else if (actionData.status === 401) {
       toast.warning(actionData.message, {
         position: "top-right",
@@ -123,7 +123,7 @@ function ResetPassword() {
             </button>
 
             <div className="text-center mb-4">
-              <Link to="/garage/user/login" className="text-decoration-none">
+              <Link to="/user/login" className="text-decoration-none">
                 login
               </Link>
             </div>

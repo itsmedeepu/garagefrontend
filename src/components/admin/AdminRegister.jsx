@@ -32,7 +32,7 @@ function AdminRegister() {
         transition: Bounce,
       });
 
-      const timer = setTimeout(() => navigate("/garage/admin/login"), 3000);
+      const timer = setTimeout(() => navigate("/admin/login"), 3000);
       return () => clearTimeout(timer);
     }
 

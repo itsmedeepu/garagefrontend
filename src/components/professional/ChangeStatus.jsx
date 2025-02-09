@@ -32,7 +32,7 @@ function ChangeStatus() {
     setLoading(true);
     const change = await ChangeStatusAction(bookingId);
 
-    navigate("/garage/professional/dashboard");
+    navigate("/professional/dashboard");
     setLoading(false);
 
     // Your existing API call logic here

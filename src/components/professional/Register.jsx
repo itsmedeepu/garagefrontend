@@ -164,7 +164,7 @@ function Register() {
           <div className="text-center mt-4">
             <span className="me-2">Already have an account?</span>
             <Link
-              to="/garage/professional/login"
+              to="/professional/login"
               className="text-decoration-none fw-bold"
             >
               Login

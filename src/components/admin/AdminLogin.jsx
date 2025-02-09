@@ -30,7 +30,7 @@ function AdminLogin() {
         transition: Bounce,
       });
 
-      setTimeout(() => navigate("/garage/admin/dashboard"), 2000); // Redirect after successful login
+      setTimeout(() => navigate("/admin/dashboard"), 2000); // Redirect after successful login
     } else if (actionData.status === 401) {
       toast.warning(actionData.message, {
         position: "top-right",
@@ -134,20 +134,14 @@ function AdminLogin() {
             </button>
 
             <div className="text-center mb-4">
-              <Link
-                to="/garage/admin/resetpassword"
-                className="text-decoration-none"
-              >
+              <Link to="/admin/resetpassword" className="text-decoration-none">
                 Forgot Password?
               </Link>
             </div>
           </Form>
           <div className="text-center mt-4">
             <span className="me-2">Don't have an account?</span>
-            <Link
-              to="/garage/admin/register"
-              className="text-decoration-none fw-bold"
-            >
+            <Link to="/admin/register" className="text-decoration-none fw-bold">
               Sign Up
             </Link>
           </div>

@@ -28,7 +28,7 @@ axiosInstance.interceptors.response.use(
         const refreshToken = localStorage.getItem("refreshtoken");
         if (!refreshToken) {
           // Redirect to login if no refresh token is available
-          return redirect("/garage/user/login");
+          return redirect("/user/login");
         }
 
         // Refresh the access token
@@ -60,7 +60,7 @@ axiosInstance.interceptors.response.use(
         localStorage.removeItem("refreshtoken");
         localStorage.removeItem("userid");
 
-        return redirect("/garage/user/login");
+        return redirect("/user/login");
       }
     }
 

@@ -97,7 +97,7 @@ const Dashboard = ({
                 </Link>
               </MenuItem>
               <MenuItem onClick={handleClose}>
-                <Form action="/garage/admin/logout" method="post">
+                <Form action="/admin/logout" method="post">
                   <button>
                     {" "}
                     <FiLogOut /> Logout
