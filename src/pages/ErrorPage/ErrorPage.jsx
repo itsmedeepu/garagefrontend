@@ -34,7 +34,7 @@ function ErrorPage() {
             {status} {title}
           </MDBTypography>
           <p className="lead">{message}</p>
-          <Link to={"/garage/"} className="btn btn-primary mt-3">
+          <Link to={"/"} className="btn btn-primary mt-3">
             Go Back to Home
           </Link>
         </MDBCol>

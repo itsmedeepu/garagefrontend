@@ -98,7 +98,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
-    // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       { index: true, path: "", element: <HomePage /> },
       { path: "contact", element: <ContactPage /> },
