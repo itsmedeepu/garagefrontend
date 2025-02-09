@@ -8,12 +8,12 @@ export const googleLoginLoader = async ({ request }) => {
   const userid = data.get("userid");
 
   if (!accesstoken || !refreshtoken) {
-    return redirect("/garage/user/login");
+    return redirect("/user/login");
   }
 
   localStorage.setItem("accesstoken", accesstoken);
   localStorage.setItem("refreshtoken", refreshtoken);
   localStorage.setItem("userid", userid);
 
-  return redirect("/garage/user/dashboard");
+  return redirect("/user/dashboard");
 };

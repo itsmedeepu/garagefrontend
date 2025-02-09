@@ -6,6 +6,6 @@ const LogoutAction = () => {
   localStorage.removeItem("userid");
   localStorage.removeItem("adminid");
   localStorage.removeItem("professinalid");
-  return redirect("/garage/Professional/login");
+  return redirect("/Professional/login");
 };
 export default LogoutAction;

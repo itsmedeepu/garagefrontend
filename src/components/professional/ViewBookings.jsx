@@ -28,7 +28,7 @@ function ViewBookings() {
   const handleViewDetails = (bookingId) => {
     // Add your view details logic here
 
-    return navigate(`/garage/professional/dashboard/viewbooking/${bookingId}`);
+    return navigate(`/professional/dashboard/viewbooking/${bookingId}`);
   };
 
   return (

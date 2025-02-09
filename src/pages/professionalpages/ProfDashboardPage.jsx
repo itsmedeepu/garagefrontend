@@ -58,7 +58,7 @@ function ProfDashboardPage() {
   };
 
   const handleStatusChange = (booking) => {
-    navigate(`/garage/professional/dashboard/markstatus/${booking.id}`);
+    navigate(`/professional/dashboard/markstatus/${booking.id}`);
   };
   return (
     <Grid container spacing={3}>
