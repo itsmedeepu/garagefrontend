@@ -94,298 +94,295 @@ import ProfessionalResetPasswordPage, {
   ProfessinalResetPasswordAction,
 } from "./pages/professionalpages/ProfessionalesetPasswordPage";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "/garage",
-      element: <RootLayout />,
-      // errorElement: <ErrorPage />,
-      children: [
-        { index: true, path: "", element: <HomePage /> },
-        { path: "contact", element: <ContactPage /> },
-        { path: "about", element: <AboutusPage /> },
-      ],
-    },
-    {
-      id: "authloader",
-      path: "garage/user",
-      // errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "login",
-          element: <LoginPage />,
-          action: LoginAction,
-          children: [
-            {
-              index: true,
-              path: "oauth",
-              loader: googleLoginLoader,
-            },
-          ],
-        },
-        {
-          path: "register",
-          element: <RegisterPage />,
-          action: RegistrationAction,
-        },
-        {
-          id: "maindashboard",
-          path: "dashboard",
-          element: (
-            <UserProtectedComponent>
-              <RootDashboardLayout />
-            </UserProtectedComponent>
-          ),
-          loader: LoadUserDetails,
+const router = createBrowserRouter([
+  {
+    path: "/garage",
+    element: <RootLayout />,
+    // errorElement: <ErrorPage />,
+    children: [
+      { index: true, path: "", element: <HomePage /> },
+      { path: "contact", element: <ContactPage /> },
+      { path: "about", element: <AboutusPage /> },
+    ],
+  },
+  {
+    id: "authloader",
+    path: "garage/user",
+    // errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "login",
+        element: <LoginPage />,
+        action: LoginAction,
+        children: [
+          {
+            index: true,
+            path: "oauth",
+            loader: googleLoginLoader,
+          },
+        ],
+      },
+      {
+        path: "register",
+        element: <RegisterPage />,
+        action: RegistrationAction,
+      },
+      {
+        id: "maindashboard",
+        path: "dashboard",
+        element: (
+          <UserProtectedComponent>
+            <RootDashboardLayout />
+          </UserProtectedComponent>
+        ),
+        loader: LoadUserDetails,
 
-          children: [
-            {
-              id: "dashboard",
-              path: "",
-              element: (
-                <UserProtectedComponent>
-                  <DashboardPage />
-                </UserProtectedComponent>
-              ),
-              loader: bookingsLoader,
-            },
-            {
-              id: "profile",
-              path: "profile",
-              element: (
-                <UserProtectedComponent>
-                  <Profile />
-                </UserProtectedComponent>
-              ),
-              loader: ProfileLoader,
-              action: profileaction,
-            },
-            {
-              id: "bookservicepage",
-              path: "bookservice",
-              element: (
-                <UserProtectedComponent>
-                  <BookservicePage />
-                </UserProtectedComponent>
-              ),
-              loader: BookservicePageLoader,
-              action: Bookignaction,
-            },
-            {
-              id: "viewbookings",
-              path: "viewbookings",
-              element: (
-                <UserProtectedComponent>
-                  <BookedServicesPage />
-                </UserProtectedComponent>
-              ),
-              loader: viewallbookingsloader,
-            },
-          ],
-        },
-        {
-          path: "logout",
-          action: logout,
-        },
-        {
-          path: "resetpassword",
-          element: <UserResetPaswordPage />,
-          action: UserResetPasswordAction,
-        },
-      ],
-    },
-    {
-      path: "garage/professional",
-      // errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "login",
-          element: <ProfLoginPage />,
-          action: ProfLoginAction,
-        },
-        {
-          path: "register",
-          element: <ProfRegisterPage />,
-          action: ProfRegistrationAction,
-        },
-        {
-          id: "profmaindashboard",
-          path: "dashboard",
-          element: (
-            <ProfessinalProtectedComponent>
-              <ProfRootDashboardLayout />
-            </ProfessinalProtectedComponent>
-          ),
-          loader: Profmainloader,
-          children: [
-            {
-              index: true,
-              id: "profdashboard",
-              path: "",
-              element: (
-                <ProfessinalProtectedComponent>
-                  <ProfDashboardPage />
-                </ProfessinalProtectedComponent>
-              ),
-              loader: bookingsLoaderProf,
-            },
-            {
-              id: "profprofile",
-              path: "profile",
-              element: (
-                <ProfessinalProtectedComponent>
-                  <ProfProfilePage />
-                </ProfessinalProtectedComponent>
-              ),
-              loader: Profprofileloader,
-              action: ProfProfileaction,
-            },
-            {
-              id: "profbookings",
-              path: "allbookings",
-              element: (
-                <ProfessinalProtectedComponent>
-                  <ViewAllBookingsPages />
-                </ProfessinalProtectedComponent>
-              ),
-              loader: Viewallbookingsloader,
-            },
-            {
-              id: "profviewbookings",
-              path: "viewbooking/:id",
-              element: (
-                <ProfessinalProtectedComponent>
-                  <ViewBookingPage />
-                </ProfessinalProtectedComponent>
-              ),
-              loader: ViewBookingLoader,
-            },
-            {
-              id: "changestatus",
-              path: "markstatus/:id",
-              element: (
-                <ProfessinalProtectedComponent>
-                  <ChangeStatusPage />
-                </ProfessinalProtectedComponent>
-              ),
-              loader: changeStatusLoader,
-            },
-            {
-              id: "completed",
-              path: "completed",
-              element: (
-                <ProfessinalProtectedComponent>
-                  <CompletedPage />
-                </ProfessinalProtectedComponent>
-              ),
-              loader: CompletedLoader,
-            },
-          ],
-        },
-        {
-          path: "logout",
-          action: LogoutAction,
-        },
-        {
-          path: "resetpassword",
-          element: <ProfessionalResetPasswordPage />,
-          action: ProfessinalResetPasswordAction,
-        },
-      ],
-    },
+        children: [
+          {
+            id: "dashboard",
+            path: "",
+            element: (
+              <UserProtectedComponent>
+                <DashboardPage />
+              </UserProtectedComponent>
+            ),
+            loader: bookingsLoader,
+          },
+          {
+            id: "profile",
+            path: "profile",
+            element: (
+              <UserProtectedComponent>
+                <Profile />
+              </UserProtectedComponent>
+            ),
+            loader: ProfileLoader,
+            action: profileaction,
+          },
+          {
+            id: "bookservicepage",
+            path: "bookservice",
+            element: (
+              <UserProtectedComponent>
+                <BookservicePage />
+              </UserProtectedComponent>
+            ),
+            loader: BookservicePageLoader,
+            action: Bookignaction,
+          },
+          {
+            id: "viewbookings",
+            path: "viewbookings",
+            element: (
+              <UserProtectedComponent>
+                <BookedServicesPage />
+              </UserProtectedComponent>
+            ),
+            loader: viewallbookingsloader,
+          },
+        ],
+      },
+      {
+        path: "logout",
+        action: logout,
+      },
+      {
+        path: "resetpassword",
+        element: <UserResetPaswordPage />,
+        action: UserResetPasswordAction,
+      },
+    ],
+  },
+  {
+    path: "garage/professional",
+    // errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "login",
+        element: <ProfLoginPage />,
+        action: ProfLoginAction,
+      },
+      {
+        path: "register",
+        element: <ProfRegisterPage />,
+        action: ProfRegistrationAction,
+      },
+      {
+        id: "profmaindashboard",
+        path: "dashboard",
+        element: (
+          <ProfessinalProtectedComponent>
+            <ProfRootDashboardLayout />
+          </ProfessinalProtectedComponent>
+        ),
+        loader: Profmainloader,
+        children: [
+          {
+            index: true,
+            id: "profdashboard",
+            path: "",
+            element: (
+              <ProfessinalProtectedComponent>
+                <ProfDashboardPage />
+              </ProfessinalProtectedComponent>
+            ),
+            loader: bookingsLoaderProf,
+          },
+          {
+            id: "profprofile",
+            path: "profile",
+            element: (
+              <ProfessinalProtectedComponent>
+                <ProfProfilePage />
+              </ProfessinalProtectedComponent>
+            ),
+            loader: Profprofileloader,
+            action: ProfProfileaction,
+          },
+          {
+            id: "profbookings",
+            path: "allbookings",
+            element: (
+              <ProfessinalProtectedComponent>
+                <ViewAllBookingsPages />
+              </ProfessinalProtectedComponent>
+            ),
+            loader: Viewallbookingsloader,
+          },
+          {
+            id: "profviewbookings",
+            path: "viewbooking/:id",
+            element: (
+              <ProfessinalProtectedComponent>
+                <ViewBookingPage />
+              </ProfessinalProtectedComponent>
+            ),
+            loader: ViewBookingLoader,
+          },
+          {
+            id: "changestatus",
+            path: "markstatus/:id",
+            element: (
+              <ProfessinalProtectedComponent>
+                <ChangeStatusPage />
+              </ProfessinalProtectedComponent>
+            ),
+            loader: changeStatusLoader,
+          },
+          {
+            id: "completed",
+            path: "completed",
+            element: (
+              <ProfessinalProtectedComponent>
+                <CompletedPage />
+              </ProfessinalProtectedComponent>
+            ),
+            loader: CompletedLoader,
+          },
+        ],
+      },
+      {
+        path: "logout",
+        action: LogoutAction,
+      },
+      {
+        path: "resetpassword",
+        element: <ProfessionalResetPasswordPage />,
+        action: ProfessinalResetPasswordAction,
+      },
+    ],
+  },
 
-    {
-      path: "garage/admin",
-      // errorElement: <ErrorPage />,
-      children: [
-        {
-          path: "login",
-          element: <AdminLoginPage />,
-          action: AdminLoginAction,
-        },
-        {
-          path: "register",
-          element: <AdminRegisterPage />,
-          action: AdminRegistrationAction,
-        },
-        {
-          id: "adminmaindashboard",
-          path: "dashboard",
-          element: (
-            <AdminProtectedComponent>
-              <AdminRootLayout />
-            </AdminProtectedComponent>
-          ),
-          loader: AdminRootLoader,
-          children: [
-            {
-              id: "admindefaultitems",
-              path: "",
-              element: (
-                <AdminProtectedComponent>
-                  <AdminDefaultItems />
-                </AdminProtectedComponent>
-              ),
-              loader: DashboardDefaultLoader,
-            },
-            {
-              id: "adminprofile",
-              path: "profile",
-              element: (
-                <AdminProtectedComponent>
-                  <AdminProfilePage />
-                </AdminProtectedComponent>
-              ),
-              loader: AdminProfileLoader,
-              action: AdminProfileaction,
-            },
-            {
-              id: "viewallusers",
-              path: "viewusers",
-              element: (
-                <AdminProtectedComponent>
-                  <ViewUsersPage />
-                </AdminProtectedComponent>
-              ),
-              loader: ViewUersPageLoader,
-              action: ViewUsersAction,
-            },
-            {
-              id: "viewallprofs",
-              path: "viewallprofs",
-              element: (
-                <AdminProtectedComponent>
-                  <ViewProfessinoalsPage />
-                </AdminProtectedComponent>
-              ),
-              loader: ViewProfessinalLoader,
-              action: ViewProfAction,
-            },
-            {
-              path: "addservice",
-              element: (
-                <AdminProtectedComponent>
-                  <AddNewServicesPage />
-                </AdminProtectedComponent>
-              ),
-              action: AddserviceAction,
-            },
-          ],
-        },
-        {
-          path: "logout",
-          action: AdminLogoutAction,
-        },
-        {
-          path: "resetpassword",
-          element: <AdminResetPasswordPage />,
-          action: AdminResetPasswordAction,
-        },
-      ],
-    },
-  ],
-  { basename: "/garage/" }
-);
+  {
+    path: "garage/admin",
+    // errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "login",
+        element: <AdminLoginPage />,
+        action: AdminLoginAction,
+      },
+      {
+        path: "register",
+        element: <AdminRegisterPage />,
+        action: AdminRegistrationAction,
+      },
+      {
+        id: "adminmaindashboard",
+        path: "dashboard",
+        element: (
+          <AdminProtectedComponent>
+            <AdminRootLayout />
+          </AdminProtectedComponent>
+        ),
+        loader: AdminRootLoader,
+        children: [
+          {
+            id: "admindefaultitems",
+            path: "",
+            element: (
+              <AdminProtectedComponent>
+                <AdminDefaultItems />
+              </AdminProtectedComponent>
+            ),
+            loader: DashboardDefaultLoader,
+          },
+          {
+            id: "adminprofile",
+            path: "profile",
+            element: (
+              <AdminProtectedComponent>
+                <AdminProfilePage />
+              </AdminProtectedComponent>
+            ),
+            loader: AdminProfileLoader,
+            action: AdminProfileaction,
+          },
+          {
+            id: "viewallusers",
+            path: "viewusers",
+            element: (
+              <AdminProtectedComponent>
+                <ViewUsersPage />
+              </AdminProtectedComponent>
+            ),
+            loader: ViewUersPageLoader,
+            action: ViewUsersAction,
+          },
+          {
+            id: "viewallprofs",
+            path: "viewallprofs",
+            element: (
+              <AdminProtectedComponent>
+                <ViewProfessinoalsPage />
+              </AdminProtectedComponent>
+            ),
+            loader: ViewProfessinalLoader,
+            action: ViewProfAction,
+          },
+          {
+            path: "addservice",
+            element: (
+              <AdminProtectedComponent>
+                <AddNewServicesPage />
+              </AdminProtectedComponent>
+            ),
+            action: AddserviceAction,
+          },
+        ],
+      },
+      {
+        path: "logout",
+        action: AdminLogoutAction,
+      },
+      {
+        path: "resetpassword",
+        element: <AdminResetPasswordPage />,
+        action: AdminResetPasswordAction,
+      },
+    ],
+  },
+]);
 
 function App() {
   return <RouterProvider router={router} />;
