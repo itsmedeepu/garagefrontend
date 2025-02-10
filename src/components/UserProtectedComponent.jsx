@@ -39,7 +39,7 @@ function UserProtectedComponent({ children }) {
   }, [navigate]); // Include navigate in dependencies
 
   if (isAuthenticated === null) {
-    return <LinearProgress color="danger" />;
+    return <LinearProgress color="error" />;
   }
 
   return isAuthenticated ? children : null; // Return null to avoid flashing UI before navigation
