@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { profaxiosInstance } from "../../axioshelpers/Profaxioshelpers";
+import { LinearProgress } from "@mui/material";
 
 function ProfessinalProtectedComponent({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
@@ -38,7 +39,7 @@ function ProfessinalProtectedComponent({ children }) {
   }, [navigate]); // Include navigate in dependencies
 
   if (isAuthenticated === null) {
-    return <div>Loading...</div>;
+    return <LinearProgress />;
   }
 
   return isAuthenticated ? children : null; // Return null to avoid flashing UI before navigation

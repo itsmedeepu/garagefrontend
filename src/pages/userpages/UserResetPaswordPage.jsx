@@ -1,7 +1,7 @@
 import React from "react";
 import ResetPassword from "../../components/user/ResetPassword";
 import axios from "axios";
-const URl = import.meta.env.VITE_API_URL;
+const URL = import.meta.env.VITE_API_URL;
 function UserResetPaswordPage() {
   return <ResetPassword />;
 }

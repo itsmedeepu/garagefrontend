@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import { adminaxiosInstance } from "../../axioshelpers/Adminaxioshelpers";
 
+import { LinearProgress } from "@mui/material";
+
 function AdminProtectedComponent({ children }) {
   const [isAuthenticated, setIsAuthenticated] = useState(null);
   const navigate = useNavigate(); // Use useNavigate instead of <Navigate />
@@ -40,7 +42,7 @@ function AdminProtectedComponent({ children }) {
   }, [navigate]); // Include navigate in dependencies
 
   if (isAuthenticated === null) {
-    return <div>Loading...</div>;
+    return <LinearProgress />;
   }
 
   return isAuthenticated ? children : null; // Return null to avoid flashing UI before navigation
