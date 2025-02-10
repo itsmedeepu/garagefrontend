@@ -39,7 +39,7 @@ function ProfessinalProtectedComponent({ children }) {
   }, [navigate]); // Include navigate in dependencies
 
   if (isAuthenticated === null) {
-    return <LinearProgress />;
+    return <LinearProgress color="danger" />;
   }
 
   return isAuthenticated ? children : null; // Return null to avoid flashing UI before navigation
